@@ -18,14 +18,17 @@ export default function HomeWork1(props: {}) {
       <div className="">
         <div>
           合约：
-          <a href="https://mumbai.polygonscan.com/address/0x86dd4c46766228ba10c6d98ab3649e9772e07d35#code">
+          <a
+            href="https://mumbai.polygonscan.com/address/0x86dd4c46766228ba10c6d98ab3649e9772e07d35#code"
+            target="_blank"
+          >
             0x86dd4c46766228ba10c6d98ab3649e9772e07d35
           </a>
         </div>
         <div>
           代码：
-          <a href="https://mumbai.polygonscan.com/address/0x86dd4c46766228ba10c6d98ab3649e9772e07d35#code">
-            0x86dd4c46766228ba10c6d98ab3649e9772e07d35
+          <a href="https://github.com/gaollg/tintin-lesson-6/blob/main/src/helper/Web3Heper.ts#L10" target="_blank">
+            https://github.com/gaollg/tintin-lesson-6/blob/main/src/helper/Web3Heper.ts#L10
           </a>
         </div>
       </div>
