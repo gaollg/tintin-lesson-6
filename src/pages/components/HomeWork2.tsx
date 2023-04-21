@@ -32,11 +32,7 @@ export default function HomeWork2(props: {}) {
           <Button
             type="primary"
             onClick={async () => {
-              // let result = await contractLesson6ERC20.methods
-              //   .mint('0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c', mintValue)
-              //   .call();
-              let address = '0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c';
-              let result = await Web3Helper.mint(address, address, '200');
+              let result = await Web3Helper.mint(mintValue + '');
               console.log('增发结果：', result);
               alert('增发结果：' + JSON.stringify(result, null, 2));
             }}
@@ -54,7 +50,15 @@ export default function HomeWork2(props: {}) {
               }
             }}
           />
-          <Button type="primary" danger>
+          <Button
+            type="primary"
+            danger
+            onClick={async () => {
+              let result = await Web3Helper.burn(burnValue + '');
+              console.log('销毁结果：', result);
+              alert('销毁结果：' + JSON.stringify(result, null, 2));
+            }}
+          >
             销毁{burnValue}
           </Button>
         </Space.Compact>

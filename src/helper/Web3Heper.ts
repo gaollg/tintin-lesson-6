@@ -34,7 +34,6 @@ let commUseGas = (method: string, fromAddress: string, toAddress: string, amount
 
     instanceWeb3.eth.sendTransaction(rawTransaction).on('transactionHash', (hash) => {
       console.log('txHash:', hash);
-      alert('txHash:' + hash);
       resolve(hash);
     });
   });
@@ -90,8 +89,15 @@ let Web3Helper = {
       });
     });
   },
-  mint: (fromAddress: string, toAddress: string, amount: string): Promise<string> => {
-    return commUseGas('mint', fromAddress, toAddress, amount);
+  mint: async (amount: string): Promise<string> => {
+    let accounts = await instanceWeb3.eth.getAccounts();
+    let result = await commUseGas('mint', accounts[0], accounts[0], amount);
+    return result;
+  },
+  burn: async (amount: string): Promise<string> => {
+    let accounts = await instanceWeb3.eth.getAccounts();
+    let result = await commUseGas('burn', accounts[0], accounts[0], amount);
+    return result;
   },
 };
 
