@@ -29,7 +29,18 @@ export default function HomeWork2(props: {}) {
               }
             }}
           />
-          <Button type="primary">增发 {mintValue}</Button>
+          <Button
+            type="primary"
+            onClick={async () => {
+              let result = await contractLesson6ERC20.methods
+                .mint('0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c', mintValue)
+                .call();
+              console.log('增加结果：', result);
+              alert(JSON.stringify(result, null, 2));
+            }}
+          >
+            增发 {mintValue}
+          </Button>
         </Space.Compact>
         <Space.Compact style={{ width: '100%' }}>
           <InputNumber

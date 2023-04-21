@@ -9,11 +9,15 @@ specifiers:
   typescript: 4.1.2
   umi: ^4.0.66
   web3: ^1.9.0
+  web3-core: ^1.9.0
+  web3-eth-contract: ^1.9.0
 
 dependencies:
   antd: 5.4.4
   umi: 4.0.66_c3kril5ezbjien74eo3fc5xmsq
   web3: 1.9.0
+  web3-core: 1.9.0
+  web3-eth-contract: 1.9.0
 
 devDependencies:
   '@types/react': 18.0.37
