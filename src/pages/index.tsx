@@ -2,6 +2,7 @@ import Web3 from 'web3';
 import Web3Login from '@/components/Web3Login';
 import { useState } from 'react';
 import HomeWork3 from './components/HomeWork3';
+import HomeWork1 from './components/HomeWork1';
 
 export default function HomePage() {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -24,6 +25,7 @@ export default function HomePage() {
 
         return (
           <div>
+            <HomeWork1 />
             <HomeWork3 />
           </div>
         );
