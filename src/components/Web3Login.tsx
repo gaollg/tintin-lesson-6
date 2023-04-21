@@ -1,7 +1,7 @@
+import Web3Helper from '@/helper/Web3Heper';
 import { Button, Divider, Card } from 'antd';
 import { useEffect, useState } from 'react';
-import Web3 from 'web3';
-let web3 = new Web3(window.ethereum);
+let web3 = Web3Helper.instance();
 
 type TLoginInfo = {
   chainId: number;
