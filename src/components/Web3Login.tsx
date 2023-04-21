@@ -27,6 +27,10 @@ export default function Web3Login(props: { onLogin: () => void }, onLogout: () =
       balance: await web3.eth.getBalance(accounts[0]),
     };
     setLoginInfo(loginInfo);
+
+    let c = Web3Helper.getLesson6ERC20();
+    let tokenSymbol = await c.methods.symbol().call();
+    console.log('--------tokenSymbol', tokenSymbol);
   };
   useEffect(() => {
     web3.eth.getAccounts().then((accounts) => {
