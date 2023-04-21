@@ -27,7 +27,7 @@ export default function HomeWork3(props: {}) {
   };
   useEffect(() => {
     fresh();
-    let intervalId = setInterval(fresh, 3000);
+    let intervalId = setInterval(fresh, 3000); //不做事件响就了，就 3 秒一刷
     return () => {
       clearInterval(intervalId);
     };
