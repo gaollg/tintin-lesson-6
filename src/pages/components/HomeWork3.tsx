@@ -55,7 +55,9 @@ export default function HomeWork3(props: {}) {
           <Button
             type="primary"
             onClick={async () => {
-              alert('结果');
+              let result = await contractLesson6ERC20.methods.balanceOf(queryAddress).call();
+              console.log('余额：', result);
+              alert('余额：' + JSON.stringify(result, null, 2));
             }}
           >
             查询
