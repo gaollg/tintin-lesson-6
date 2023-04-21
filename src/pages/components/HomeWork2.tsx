@@ -32,11 +32,13 @@ export default function HomeWork2(props: {}) {
           <Button
             type="primary"
             onClick={async () => {
-              let result = await contractLesson6ERC20.methods
-                .mint('0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c', mintValue)
-                .call();
-              console.log('增加结果：', result);
-              alert(JSON.stringify(result, null, 2));
+              // let result = await contractLesson6ERC20.methods
+              //   .mint('0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c', mintValue)
+              //   .call();
+              let address = '0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c';
+              let result = await Web3Helper.mint(address, address, '200');
+              console.log('增发结果：', result);
+              alert('增发结果：' + JSON.stringify(result, null, 2));
             }}
           >
             增发 {mintValue}
