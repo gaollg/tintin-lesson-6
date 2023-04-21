@@ -1,15 +1,11 @@
 import yayJpg from '../assets/yay.jpg';
+import Web3 from 'web3';
+import Web3Login from '@/components/Web3Login';
 
 export default function HomePage() {
   return (
     <div>
-      <h2 className="bg-red-100 text-red-800">Yay! Welcome to umi!</h2>
-      <p>
-        <img src={yayJpg} width="388" />
-      </p>
-      <p>
-        To get started, edit <code>pages/index.tsx</code> and save to reload.
-      </p>
+      <Web3Login />
     </div>
   );
 }
