@@ -28,9 +28,7 @@ export default function Web3Login(props: { onLogin: () => void }, onLogout: () =
     };
     setLoginInfo(loginInfo);
 
-    let c = Web3Helper.getLesson6ERC20();
-    let tokenSymbol = await c.methods.symbol().call();
-    console.log('--------tokenSymbol', tokenSymbol);
+    props.onLogin && props.onLogin();
   };
   useEffect(() => {
     web3.eth.getAccounts().then((accounts) => {
@@ -40,12 +38,8 @@ export default function Web3Login(props: { onLogin: () => void }, onLogout: () =
 
   if (loginInfo) {
     return (
-      <Card title="登录信息" extra={<a href="#">More</a>} style={{ width: 500 }}>
-        <div className="max-w-[500px]">
-          <div className="flex flex-row  mt-2">
-            <div className="flex-1">登录账号</div>
-            <div className="flex-1 text-gray-400">{accounts[0]}</div>
-          </div>
+      <Card title={'登录账号：' + accounts[0]}>
+        <div>
           <div className="flex flex-row  mt-2">
             <div className="flex-1">chainId</div>
             <div className="flex-1 text-gray-400">{loginInfo?.chainId}</div>

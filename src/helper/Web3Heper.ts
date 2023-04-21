@@ -13,11 +13,11 @@ let Web3Helper = {
       throw `未安装钱包, 请安装钱包后重试`;
     }
     instanceWeb3 = new Web3(window.ethereum);
-    console.log(Lesson6ERC20AbiData.abi);
     return instanceWeb3;
   },
-  getLesson6ERC20: (): Contract => {
+  getContractLesson6ERC20: (): Contract => {
     let Contract = Web3Helper.instance().eth.Contract;
+    //@ts-ignore
     let contract = new Contract(Lesson6ERC20AbiData.abi, '0x86Dd4C46766228BA10c6d98AB3649E9772e07D35');
     return contract;
   },

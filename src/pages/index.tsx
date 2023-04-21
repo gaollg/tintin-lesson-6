@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import Web3Login from '@/components/Web3Login';
 import { useState } from 'react';
+import HomeWork3 from './components/HomeWork3';
 
 export default function HomePage() {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Web3Login
         onLogin={() => {
           setIsLogin(true);
+          console.log('xxxxxxxxxxx');
         }}
       />
       {(() => {
@@ -20,7 +22,11 @@ export default function HomePage() {
           return <div></div>;
         }
 
-        return <div></div>;
+        return (
+          <div>
+            <HomeWork3 />
+          </div>
+        );
       })()}
     </div>
   );
